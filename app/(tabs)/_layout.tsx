@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import { Image } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -31,6 +32,18 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="popcorn"
+        options={{
+          title: 'PopCorn',
+          tabBarIcon: ({ color }) => (
+            <Image
+              source={require('@/assets/images/Logo_PopCorn.png')}
+              style={{ width: 28, height: 28, backgroundColor: 'red'}}
+            />
+          ),
         }}
       />
       <Tabs.Screen
